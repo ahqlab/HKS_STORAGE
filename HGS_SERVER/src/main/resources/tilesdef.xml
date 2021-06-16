@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+	<!-- 관리자웹 : 기본페이지  -->
+	<definition name="layout" template="/WEB-INF/views/layout/layout.jsp">
+		<put-attribute name="script" value="/WEB-INF/views/layout/script.jsp" />
+		<put-attribute name="h_menu" value="/WEB-INF/views/layout/h_menu.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="adminlayout" template="/WEB-INF/views/layout/layout.jsp">
+		<put-attribute name="script" value="/WEB-INF/views/layout/admin/script.jsp" />
+		<put-attribute name="h_menu" value="/WEB-INF/views/layout/admin/h_menu.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/layout/admin/footer.jsp" />
+	</definition>
+	
+	<definition name="storeage/**" extends="layout">
+	
+		<put-attribute name="header" value="/WEB-INF/views/storeage/header.jsp" />
+		<put-attribute name="v_menu" value="/WEB-INF/views/storeage/v_menu.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/storeage/{1}.jsp" />
+	</definition>
+	
+	
+	<definition name="customer/**" extends="layout">
+		<put-attribute name="header" value="/WEB-INF/views/customer/header.jsp" />
+		<put-attribute name="v_menu" value="/WEB-INF/views/customer/v_menu.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/customer/{1}.jsp" />
+	</definition>
+	
+	
+	<definition name="disability/**" extends="layout">
+		<put-attribute name="header" value="/WEB-INF/views/disability/header.jsp" />
+		<put-attribute name="v_menu" value="/WEB-INF/views/disability/v_menu.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/disability/{1}.jsp" />
+	</definition>
+	
+	<definition name="setting/term/**" extends="layout">
+		<put-attribute name="header" value="/WEB-INF/views/setting/term/header.jsp" />
+		<put-attribute name="v_menu" value="/WEB-INF/views/setting/term/v_menu.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/setting/term/{1}.jsp" />
+	</definition>
+	
+	<definition name="user/**/**" extends="layout">
+		<put-attribute name="header" value="/WEB-INF/views/user/header.jsp" />
+		<put-attribute name="v_menu" value="/WEB-INF/views/user/v_menu.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/user/{1}/{2}.jsp" />
+	</definition>
+	
+	<definition name="admin/user/**" extends="adminlayout">
+		<put-attribute name="header" value="/WEB-INF/views/admin/user/header.jsp" />
+		<put-attribute name="v_menu" value="/WEB-INF/views/admin/user/v_menu.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/admin/user/{1}.jsp" />
+	</definition>
+	
+	
+</tiles-definitions>
